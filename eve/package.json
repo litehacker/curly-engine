@@ -1,0 +1,32 @@
+{
+  "name": "eve-agent",
+  "version": "0.0.0",
+  "type": "module",
+  "imports": {
+    "#*": "./agent/*",
+    "#evals/*": "./evals/*"
+  },
+  "scripts": {
+    "build": "eve build",
+    "dev": "eve dev",
+    "start": "eve start",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@ai-sdk/anthropic": "^4.0.45",
+    "@vercel/connect": "^2.0.1",
+    "ai": "^7.0.58",
+    "eve": "^0.42.0",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "24.x",
+    "typescript": "7.0.2"
+  },
+  "overrides": {
+    "ai": "^7.0.58"
+  },
+  "engines": {
+    "node": "24.x"
+  }
+}
