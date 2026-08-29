@@ -1,5 +1,5 @@
 import { defineAgent } from "eve";
 
 export default defineAgent({
-  model: "anthropic/claude-opus-4.8",
+  model: "zai/glm-5.3-flash",
 });
