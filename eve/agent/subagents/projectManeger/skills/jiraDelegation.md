@@ -21,4 +21,4 @@ Required work types (create any that are missing in the project, then use them):
 3. Assign so the work type matches the specialist (`Frontend` → `frontend`, `Backend` → `backend`, `DevOps` → `devops`, `Intern` → `intern`, `ResearchEngineer` → `researchEngineer`, `Architect` → `architect`).
 4. Do not implement. Leave descriptions thin if needed; the architect updates them and answers comments.
 5. Do not put two specialists on the same child. Do not open a second child for the same outcome and work type.
-6. When a specialist finishes, they move the item to **Test**. Do not close it as Done for them. If **Test** is not on the workflow, add or request that status before calling work complete.
+6. When a specialist finishes, they move the item to **Test**. Do not close it as Done for them. If **Test** is not on the workflow, add or request that status before calling work complete. **Test** triggers QA on staging.

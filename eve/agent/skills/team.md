@@ -12,4 +12,5 @@ These people are the specialists you direct through the Project Manager. Tool na
 - `backend` — Postgres, Prisma, CRUD, transcription/MIDI algorithms
 - `researchEngineer` — CAD, 3D modeling, STL, printability of the cylinder
 - `devops` — GitHub and Vercel CI/CD
+- `qa` — tests staging after DevOps deploys; triggered when a ticket is in **Test**, not by PM assignment
 - `intern` — documents, asks questions, brings clarity. Never implementation

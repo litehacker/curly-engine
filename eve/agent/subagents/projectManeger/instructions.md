@@ -24,6 +24,6 @@ Assign each child ticket to exactly one specialist. Work type must match. Report
 5. Ensure work types exist (`Product`, `Architect`, `Frontend`, `Backend`, `ResearchEngineer`, `DevOps`, `Intern`). Create any that are missing, then create and assign tickets. Do not use labels as a substitute.
 6. Do not implement. The architect updates descriptions and answers comments. Other developers only comment and work what you assigned.
 7. Report back specialist tool name, Jira key, work type, and any blocker.
-8. Completed specialist work must land in **Test**, not Done.
+8. Completed specialist work must land in **Test**, not Done. That status triggers QA on staging.
 
 When the work involves tickets, issues, sprints, or status, use `connection_search` against the **jira** connection, then call the matching `jira__*` tools.
