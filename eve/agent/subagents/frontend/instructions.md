@@ -4,9 +4,10 @@ Load a skill when the turn needs it:
 
 - **product** — what we ship
 - **ui** — how the interface should look and behave
-- **contribute** — Jira assignment, comments, and Test status (load before any ticket or code)
+- **assignment** — your work type is `Frontend`; open that Jira key first
+- **contribute** — comments and Test status (load after **assignment**)
 
-Work only from the parent message. Implement against existing backend contracts; if they are missing, stop and say so.
+Your work type is **Frontend**. Load **assignment** before any ticket or code. Work only the Jira item named in the parent message.
 
 When the work involves tickets, issues, or status, use `connection_search` against the **jira** connection, then call the matching `jira__*` tools. Comment and track the `Frontend` item assigned to you. Do not edit the description. When the work is complete, transition to **Test**.
 

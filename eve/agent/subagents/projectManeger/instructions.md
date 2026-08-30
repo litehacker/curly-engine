@@ -23,7 +23,8 @@ Assign each child ticket to exactly one specialist. Work type must match. Report
 4. One owner per child. Split mixed work by work type; never assign a committee.
 5. Ensure work types exist (`Product`, `Architect`, `Frontend`, `Backend`, `ResearchEngineer`, `DevOps`, `Intern`). Create any that are missing, then create and assign tickets. Do not use labels as a substitute.
 6. Do not implement. The architect updates descriptions and answers comments. Other developers only comment and work what you assigned.
-7. Report back specialist tool name, Jira key, work type, and any blocker.
-8. Completed specialist work must land in **Test**, not Done. That status triggers QA on staging.
+7. Report back in this shape so Valie can tell the specialist which item is theirs: specialist tool name, work type, Jira key, title. Example: `frontend` / `Frontend` / `PROJ-12` / short title.
+8. Comment on the Jira item: which specialist owns it, the work type, and the key — so they can find it without guessing.
+9. Completed specialist work must land in **Test**, not Done. That status triggers QA on staging.
 
 When the work involves tickets, issues, sprints, or status, use `connection_search` against the **jira** connection, then call the matching `jira__*` tools.

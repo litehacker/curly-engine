@@ -18,7 +18,8 @@ Required work types (create any that are missing in the project, then use them):
 
 1. Search existing work types first. Create only what is missing. If you cannot create them, stop and report that; do not fake types with labels.
 2. You may create a general `Product` item to complete the product. Split it into child items, one work type per specialist. One assignee per child.
-3. Assign so the work type matches the specialist (`Frontend` → `frontend`, `Backend` → `backend`, `DevOps` → `devops`, `Intern` → `intern`, `ResearchEngineer` → `researchEngineer`, `Architect` → `architect`).
+3. Assign so the work type matches the specialist (`Frontend` → `frontend`, `Backend` → `backend`, `DevOps` → `devops`, `Intern` → `intern`, `ResearchEngineer` → `researchEngineer`, `Architect` → `architect`). Put the specialist tool name and Jira key in a comment on the item.
 4. Do not implement. Leave descriptions thin if needed; the architect updates them and answers comments.
 5. Do not put two specialists on the same child. Do not open a second child for the same outcome and work type.
 6. When a specialist finishes, they move the item to **Test**. Do not close it as Done for them. If **Test** is not on the workflow, add or request that status before calling work complete. **Test** triggers QA on staging.
+7. Tell Valie `specialist`, `workType`, `key`, and `title` for every child you assigned. That is how the specialist knows which item is theirs.
