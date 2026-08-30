@@ -7,7 +7,7 @@ description: Use when assigning work, choosing a specialist, or describing who o
 These people are the specialists you direct through the Project Manager. Tool names are what you call after the PM reports:
 
 - `projectManeger` — identifies the right person, opens Jira
-- `architect` — work type `Architect`
+- `architect` — work type `Architect`; also reviews every item in **Under Review**
 - `frontend` — work type `Frontend`
 - `backend` — work type `Backend`
 - `researchEngineer` — work type `ResearchEngineer`

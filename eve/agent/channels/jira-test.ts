@@ -48,33 +48,43 @@ function issueKeyFromBody(body: unknown): string | null {
   return null;
 }
 
-function enteredTest(body: unknown): boolean {
+function statusNameFromBody(body: unknown): string {
   const root = asRecord(body);
   if (!root) {
-    return false;
+    return "";
   }
   const issue = asRecord(root.issue);
   const fields = issue ? asRecord(issue.fields) : null;
   const status = fields ? asRecord(fields.status) : null;
-  const statusName = typeof status?.name === "string" ? status.name : "";
-  if (statusName.toLowerCase() === "test") {
-    return true;
+  if (typeof status?.name === "string") {
+    return status.name;
   }
   const changelog = asRecord(root.changelog);
   const items = changelog?.items;
   if (!Array.isArray(items)) {
-    return false;
+    return "";
   }
-  return items.some((item) => {
+  for (const item of items) {
     const row = asRecord(item);
     if (!row) {
-      return false;
+      continue;
     }
     const field = typeof row.field === "string" ? row.field : "";
     const toName = row["toString"];
-    const toStatus = typeof toName === "string" ? toName : "";
-    return field === "status" && toStatus.toLowerCase() === "test";
-  });
+    if (field === "status" && typeof toName === "string") {
+      return toName;
+    }
+  }
+  return "";
+}
+
+function isTestStatus(name: string): boolean {
+  return name.trim().toLowerCase() === "test";
+}
+
+function isUnderReviewStatus(name: string): boolean {
+  const n = name.trim().toLowerCase();
+  return n === "under review" || n === "in review";
 }
 
 export default defineChannel({
@@ -90,7 +100,7 @@ export default defineChannel({
       } catch {
         return Response.json({ error: "invalid json" }, { status: 400 });
       }
-      if (!enteredTest(body)) {
+      if (!isTestStatus(statusNameFromBody(body))) {
         return Response.json({ ignored: true, reason: "not-test" });
       }
       const key = issueKeyFromBody(body);
@@ -104,6 +114,33 @@ export default defineChannel({
         " Load **qaDispatch** and call `qa` once with this issue key.",
         " QA tests staging after DevOps deploys.",
         " Do not route this through the Project Manager.",
+      ].join("");
+      const session = await from(key).send(prompt, { auth: null });
+      return Response.json({ sessionId: session.id, key });
+    }),
+    POST("/jira/review", async (request, { from }) => {
+      if (!webhookAuthorized(request)) {
+        return Response.json({ error: "unauthorized" }, { status: 401 });
+      }
+      let body: unknown;
+      try {
+        body = await request.json();
+      } catch {
+        return Response.json({ error: "invalid json" }, { status: 400 });
+      }
+      if (!isUnderReviewStatus(statusNameFromBody(body))) {
+        return Response.json({ ignored: true, reason: "not-under-review" });
+      }
+      const key = issueKeyFromBody(body);
+      if (!key) {
+        return Response.json({ error: "missing issue key" }, { status: 400 });
+      }
+      const prompt = [
+        "Jira work ",
+        key,
+        " is in status Under Review.",
+        " Load **architectDispatch** and call `architect` once with this issue key.",
+        " They review the item. Do not route this through the Project Manager or QA.",
       ].join("");
       const session = await from(key).send(prompt, { auth: null });
       return Response.json({ sessionId: session.id, key });

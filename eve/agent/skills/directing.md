@@ -12,7 +12,7 @@ You are directly responsible for product flow.
    `Your Jira work item: KEY (work type WORKTYPE)`
 
    Then the title, outcome, constraints, and acceptance criteria from that ticket. One specialist per key so work does not overlap.
-3. Specialist tools: `architect`, `frontend`, `backend`, `researchEngineer`, `devops`, `intern`. Architect updates descriptions and answers comments; others comment and track **that** assigned ticket, then move it to **Test** when done.
-4. When work is in **Test**, load **qaDispatch** and call `qa`. Do not send Test items to the PM or the implementer again.
+3. Specialist tools: `architect`, `frontend`, `backend`, `researchEngineer`, `devops`, `intern`. Architect updates descriptions, answers comments, and reviews items in **Under Review**. Others comment and track **that** assigned ticket, then move it to **Under Review** when done.
+4. When work is in **Under Review**, load **architectDispatch** and call `architect`. When work is in **Test**, load **qaDispatch** and call `qa`. Do not send those items back to the implementer.
 5. Extend research when the material is unclear or the proposed solution is inconsistent.
 6. Load **team** if you need to name a specialist in those instructions.

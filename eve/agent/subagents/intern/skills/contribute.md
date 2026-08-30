@@ -11,4 +11,4 @@ Load **assignment** first. Work only the Jira item the PM assigned to you (`Inte
 3. Do not edit the description, work type, or assignee. Comment only (questions, alignment, progress). The architect owns the description.
 4. Do not create tickets or work types. Do not implement product features.
 5. Track progress on **that** ticket in comments.
-6. When the documentation or alignment work is complete, get available transitions and move **that** ticket to **Test**. Never skip Test for Done. If Test is missing, comment and stop; do not invent a status. Moving to Test is what starts QA on staging.
+6. When the documentation or alignment work is complete, get available transitions and move **that** ticket to **Under Review**. Never skip to Test or Done. If Under Review is missing, comment and stop; do not invent a status. That status is what starts the Architect review.

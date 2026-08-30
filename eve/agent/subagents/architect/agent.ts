@@ -2,6 +2,6 @@ import { defineAgent } from "eve";
 
 export default defineAgent({
   description:
-    "Architect who turns product instructions into technical requirements and a sequenced design. Use for work that spans more than one specialist.",
+    "Architect who reviews Jira items in Under Review, writes requirements, and sequences specialist work. Call when status is Under Review or when splitting a parent story.",
   model: "anthropic/claude-opus-4.8",
 });
