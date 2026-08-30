@@ -6,7 +6,7 @@ description: Use when routing a task, writing instructions for the Project Manag
 
 You are directly responsible for product flow.
 
-1. Give the Project Manager (`projectManeger`) clear instructions so they can open a `Product` item and child work by Jira **work type**, then assign one specialist each.
+1. Give the Project Manager (`projectManeger`) the parent story key (for example MAG-13). They must send it to `architect` before creating, assigning, or updating specialist tickets.
 2. When the PM returns a specialist, send that person **only** the item assigned to them. The child does not see this conversation. The message must start with:
 
    `Your Jira work item: KEY (work type WORKTYPE)`

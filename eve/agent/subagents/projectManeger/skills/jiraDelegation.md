@@ -1,5 +1,5 @@
 ---
-description: Use when creating Jira work, work types, or assigning specialists. Load before any Jira write.
+description: Use when creating Jira work, work types, or assigning specialists. Load before any Jira write. Architect must review the parent story first.
 ---
 
 # Jira delegation
@@ -16,10 +16,11 @@ Required work types (create any that are missing in the project, then use them):
 - `DevOps`
 - `Intern`
 
-1. Search existing work types first. Create only what is missing. If you cannot create them, stop and report that; do not fake types with labels.
-2. You may create a general `Product` item to complete the product. Split it into child items, one work type per specialist. One assignee per child.
-3. Assign so the work type matches the specialist (`Frontend` → `frontend`, `Backend` → `backend`, `DevOps` → `devops`, `Intern` → `intern`, `ResearchEngineer` → `researchEngineer`, `Architect` → `architect`). Put the specialist tool name and Jira key in a comment on the item.
-4. Do not implement. Leave descriptions thin if needed; the architect updates them and answers comments.
-5. Do not put two specialists on the same child. Do not open a second child for the same outcome and work type.
-6. When a specialist finishes, they move the item to **Test**. Do not close it as Done for them. If **Test** is not on the workflow, add or request that status before calling work complete. **Test** triggers QA on staging.
-7. Tell Valie `specialist`, `workType`, `key`, and `title` for every child you assigned. That is how the specialist knows which item is theirs.
+1. Fetch the parent story first (for example MAG-13). Do not create, assign, or update specialist children until `architect` has reviewed that story and commented that the split is ready (or listed blockers). If that comment is missing, stop.
+2. Search existing work types first. Create only what is missing. If you cannot create them, stop and report that; do not fake types with labels.
+3. After Architect signs off, you may use the story as parent or open a `Product` item. Split into child items, one work type per specialist. One assignee per child.
+4. Assign so the work type matches the specialist (`Frontend` → `frontend`, `Backend` → `backend`, `DevOps` → `devops`, `Intern` → `intern`, `ResearchEngineer` → `researchEngineer`, `Architect` → `architect`). Put the specialist tool name and Jira key in a comment on the item.
+5. Do not implement. The architect updates descriptions and answers comments.
+6. Do not put two specialists on the same child. Do not open a second child for the same outcome and work type.
+7. When a specialist finishes, they move the item to **Test**. Do not close it as Done for them. If **Test** is not on the workflow, add or request that status before calling work complete. **Test** triggers QA on staging.
+8. Tell Valie `specialist`, `workType`, `key`, and `title` for every child you assigned. That is how the specialist knows which item is theirs.
