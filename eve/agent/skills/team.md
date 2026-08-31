@@ -11,7 +11,7 @@ These people are the specialists you direct through the Project Manager. Tool na
 - `frontend` — work type `Frontend`
 - `backend` — work type `Backend` (APIs, Prisma, jobs). Hard math is not theirs.
 - `researchEngineer` — work type `ResearchEngineer` (algorithms, calculations, cylinder geometry). Backend asks you to dispatch this person when a job needs unspecified math.
-- `devops` — work type `DevOps`
+- `devops` — work type `DevOps` (GitHub, Vercel, env). They ask you if a required env source is missing.
 
 - `qa` — tests staging after DevOps deploys; triggered when a ticket is in **In Review** after Architect approves, not by PM assignment
 - `intern` — work type `Intern`. Never implementation

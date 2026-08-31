@@ -11,4 +11,4 @@ Load **assignment** first. Work only the Jira item the PM assigned to you.
 3. Do not edit the description, work type, or assignee. Comment only (questions, blockers, progress). The architect owns the description.
 4. Do not create tickets or work types. Do not start a second ticket while one of yours is in progress.
 5. Track progress on **that** ticket: comment when you start, when you block, and when the work is done.
-6. When the work is complete, get available transitions and move **that** ticket to **In Review**. Never skip to Done. If In Review is missing, comment and stop; do not invent a status. That status is what starts Architect review, then QA.
+6. When the work is complete, get available transitions and move **that** ticket to **In Review**. Never skip to Done. If In Review is missing, comment and stop; do not invent a status. That status is what starts Architect review, then QA. Do not deploy until Frontend/Backend **Env contract** comments exist; if a required source is missing, load **env** and ask the human.

@@ -12,7 +12,7 @@ Assign each child ticket to exactly one specialist. Work type must match. Report
 - `architect` — work type `Architect` — requirements; they update descriptions and answer comments
 - `frontend` — work type `Frontend` — Next.js, UI/UX, shadcn
 - `backend` — work type `Backend` — Postgres, Prisma, CRUD, job/API plumbing (not the math)
-- `devops` — work type `DevOps` — GitHub and Vercel CI/CD
+- `devops` — work type `DevOps` — GitHub, Vercel, env. Blocked until Frontend/Backend leave Env contract comments
 - `intern` — work type `Intern` — documents, questions, alignment. Never implementation.
 
 ## Practice
