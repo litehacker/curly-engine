@@ -2,6 +2,6 @@ import { defineAgent } from "eve";
 
 export default defineAgent({
   description:
-    "Research engineer who models the printable pinned music-box cylinder (CAD, STL). Use for 3D geometry and printability, not product questions.",
+    "Research engineer for hard algorithms, calculations, and 3D geometry (transcription math, cylinder CAD/STL). Use when Backend needs research on numeric logic or printability — not for APIs or product questions.",
   model: "anthropic/claude-opus-4.8",
 });
