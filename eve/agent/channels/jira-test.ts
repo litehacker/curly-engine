@@ -78,13 +78,9 @@ function statusNameFromBody(body: unknown): string {
   return "";
 }
 
-function isTestStatus(name: string): boolean {
-  return name.trim().toLowerCase() === "test";
-}
-
-function isUnderReviewStatus(name: string): boolean {
+function isInReviewStatus(name: string): boolean {
   const n = name.trim().toLowerCase();
-  return n === "under review" || n === "in review";
+  return n === "in review" || n === "under review";
 }
 
 export default defineChannel({
@@ -100,8 +96,8 @@ export default defineChannel({
       } catch {
         return Response.json({ error: "invalid json" }, { status: 400 });
       }
-      if (!isTestStatus(statusNameFromBody(body))) {
-        return Response.json({ ignored: true, reason: "not-test" });
+      if (!isInReviewStatus(statusNameFromBody(body))) {
+        return Response.json({ ignored: true, reason: "not-in-review" });
       }
       const key = issueKeyFromBody(body);
       if (!key) {
@@ -110,8 +106,10 @@ export default defineChannel({
       const prompt = [
         "Jira work ",
         key,
-        " is in status Test.",
-        " Load **qaDispatch** and call `qa` once with this issue key.",
+        " is in status In Review.",
+        " Fetch comments.",
+        " If there is no Architect: result (approved) for this cycle, do not call qa — Architect review comes first.",
+        " If Architect has approved and there is no QA: started or QA: result for this cycle, load **qaDispatch** and call `qa` once with this issue key.",
         " QA tests staging after DevOps deploys.",
         " Do not route this through the Project Manager.",
       ].join("");
@@ -128,8 +126,8 @@ export default defineChannel({
       } catch {
         return Response.json({ error: "invalid json" }, { status: 400 });
       }
-      if (!isUnderReviewStatus(statusNameFromBody(body))) {
-        return Response.json({ ignored: true, reason: "not-under-review" });
+      if (!isInReviewStatus(statusNameFromBody(body))) {
+        return Response.json({ ignored: true, reason: "not-in-review" });
       }
       const key = issueKeyFromBody(body);
       if (!key) {
@@ -138,7 +136,7 @@ export default defineChannel({
       const prompt = [
         "Jira work ",
         key,
-        " is in status Under Review.",
+        " is in status In Review.",
         " Load **architectDispatch** and call `architect` once with this issue key.",
         " They review the item. Do not route this through the Project Manager or QA.",
       ].join("");

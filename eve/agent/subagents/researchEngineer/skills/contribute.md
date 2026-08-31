@@ -11,4 +11,4 @@ Load **assignment** first. On a `ResearchEngineer` item, work only what the PM a
 3. Do not edit the description, work type, or assignee. Comment only (questions, blockers, progress, or the consult spec). The architect owns the description.
 4. Do not create tickets or work types. Do not start a second ticket while one of yours is in progress.
 5. Track progress on **your** `ResearchEngineer` ticket: comment when you start, when you block, and when the work is done. On a Backend consult, only comment the spec.
-6. When **your** `ResearchEngineer` work is complete, get available transitions and move **that** ticket to **Under Review**. Never skip to Test or Done. Do not move a Backend consult ticket. If Under Review is missing, comment and stop; do not invent a status. That status is what starts the Architect review.
+6. When **your** `ResearchEngineer` work is complete, get available transitions and move **that** ticket to **In Review**. Never skip to Done. Do not move a Backend consult ticket. If In Review is missing, comment and stop; do not invent a status. That status is what starts Architect review, then QA.

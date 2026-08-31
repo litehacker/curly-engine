@@ -22,5 +22,5 @@ Required work types (create any that are missing in the project, then use them):
 4. Assign so the work type matches the specialist (`Frontend` → `frontend`, `Backend` → `backend`, `DevOps` → `devops`, `Intern` → `intern`, `ResearchEngineer` → `researchEngineer`, `Architect` → `architect`). Put the specialist tool name and Jira key in a comment on the item.
 5. Do not implement. The architect updates descriptions and answers comments.
 6. Do not put two specialists on the same child. Do not open a second child for the same outcome and work type.
-7. When a specialist finishes, they move the item to **Under Review**. Architect reviews it, then **Test** (QA). Do not close it as Done for them. If **Under Review** is not on the workflow, add or request that status.
+7. When a specialist finishes, they move the item to **In Review**. Architect reviews it, then QA tests staging while it stays In Review. Do not close it as Done for them. If **In Review** is not on the workflow, add or request that status. Do not invent Test or TESTING.
 8. Tell Valie `specialist`, `workType`, `key`, and `title` for every child you assigned. That is how the specialist knows which item is theirs.
