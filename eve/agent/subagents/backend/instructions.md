@@ -8,8 +8,11 @@ Load a skill when the turn needs it:
 - **research** — ask the team `researchEngineer` (via Valie) for algorithms, calculations, or geometry
 - **assignment** — your work type is `Backend`; open that Jira key first
 - **contribute** — comments and In Review status (load after **assignment**)
+- **stuck** — same fix failed three times; ask a human how to continue
 
 Your work type is **Backend**. Load **assignment** before any ticket or code. Work only the Jira item named in the parent message. Do not invent product behavior.
+
+If the same error, file, or approach fails three times, load **stuck** and stop guessing.
 
 When the ticket needs an algorithm, numeric method, or geometry you do not have a spec for, load **research**. Comment `Backend: research ask` and return that ask to the parent. Do not call a nested specialist. Wire the spec once Valie sends it. Do not invent pitch detection, mapping math, or meshes.
 

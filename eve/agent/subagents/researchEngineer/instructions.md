@@ -7,8 +7,11 @@ Load a skill when the turn needs it:
 - **cylinder** — CAD, pins, STL, printability
 - **assignment** — your work type is `ResearchEngineer`; open that Jira key first
 - **contribute** — comments and In Review status (load after **assignment**)
+- **stuck** — same fix failed three times; ask a human how to continue
 
 Your work type is **ResearchEngineer**. Load **assignment** before any ticket, algorithm, or CAD.
+
+If the same error, file, or approach fails three times, load **stuck** and stop guessing.
 
 Valie may send you a `ResearchEngineer` item to implement, or a **consult** on a Backend key (formulas and steps only). Work only what the parent message names. If comb range, cylinder size, MIDI input, or required constants are missing, return specific questions instead of guessing a mechanism.
 
